@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DesignGrab Pro — Download</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#e4e4e7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .card{background:#18181b;border:1px solid #27272a;border-radius:16px;padding:48px 40px;max-width:560px;width:100%;text-align:center}
+  .check{width:64px;height:64px;background:#a78bfa;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px;color:#000}
+  h1{font-size:28px;font-weight:800;color:#fff;margin-bottom:8px}
+  .sub{color:#71717a;font-size:15px;margin-bottom:32px}
+  .key-box{background:#0a0a0a;border:1px solid #27272a;border-radius:10px;padding:16px;margin-bottom:24px;text-align:center}
+  .key-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#52525b;margin-bottom:8px}
+  .key-value{font-family:'SF Mono','Cascadia Code',monospace;font-size:22px;font-weight:700;color:#a78bfa;letter-spacing:2px;cursor:pointer}
+  .key-hint{font-size:11px;color:#3f3f46;margin-top:8px}
+  .btn-dl{display:inline-block;padding:16px 40px;background:#a78bfa;color:#000;font-size:18px;font-weight:700;border-radius:10px;text-decoration:none;transition:all 0.2s;margin-bottom:24px}
+  .btn-dl:hover{background:#8b5cf6;transform:translateY(-2px);box-shadow:0 8px 30px rgba(167,139,250,0.3)}
+  .steps{text-align:left;padding:20px;background:#0a0a0a;border-radius:10px;border:1px solid #27272a;margin-bottom:20px}
+  .steps h3{font-size:13px;font-weight:700;margin-bottom:12px;color:#71717a;text-transform:uppercase;letter-spacing:0.5px}
+  .steps ol{padding-left:20px;font-size:13px;color:#a1a1aa;line-height:2.2}
+  .steps code{background:#27272a;padding:2px 6px;border-radius:4px;font-size:12px;font-family:'SF Mono','Cascadia Code',monospace}
+  .note{font-size:12px;color:#3f3f46;line-height:1.6}
+  .note a{color:#a78bfa}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="check">&#10003;</div>
+  <h1>You're in.</h1>
+  <p class="sub">Payment received. Here's your license key and download.</p>
+
+  <div class="key-box">
+    <div class="key-label">Your License Key</div>
+    <div class="key-value" id="licenseKey" title="Click to copy">DG-PQJK-GSUA</div>
+    <div class="key-hint">Click to copy. Enter this in the extension popup to unlock Pro.</div>
+  </div>
+
+  <a href="DesignGrab-Pro.zip" class="btn-dl" download>Download DesignGrab Pro</a>
+
+  <div class="steps">
+    <h3>Setup (30 seconds)</h3>
+    <ol>
+      <li>Download and unzip the file above</li>
+      <li>Open Chrome &rarr; <code>chrome://extensions</code></li>
+      <li>Turn on <strong>Developer Mode</strong> (top right)</li>
+      <li>Click <strong>Load unpacked</strong> &rarr; select the unzipped folder</li>
+      <li>Click the DesignGrab icon on any website</li>
+      <li>Enter your license key in the popup to unlock exports</li>
+    </ol>
+  </div>
+
+  <p class="note">
+    Bookmark this page — you can re-download anytime.<br>
+    Need help? <a href="mailto:jeff@thecodingpit.com">jeff@thecodingpit.com</a>
+  </p>
+</div>
+
+<script>
+  document.getElementById('licenseKey').addEventListener('click', function() {
+    navigator.clipboard.writeText(this.textContent).then(() => {
+      this.style.color = '#4ade80';
+      this.textContent = 'Copied!';
+      setTimeout(() => {
+        this.style.color = '#a78bfa';
+        this.textContent = 'DG-PQJK-GSUA';
+      }, 1500);
+    });
+  });
+</script>
+</body>
+</html>
